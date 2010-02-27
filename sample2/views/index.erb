@@ -1,0 +1,49 @@
+<% unless login? %>
+<p>
+  <a href="/login">ログイン</a>／
+  <a href="/signup">サインアップ</a>
+</p>
+<% else %>
+<h2>
+  こんにちわ！<%= @user.name %>さん
+</h2>
+<div id="follow">
+  フォローしている(<%= @user.followings.count %>)／フォローされている(<%= @user.followers.count %>)
+</div>
+<p>
+  最近のユーザ
+</p>
+<div id="current_user">
+<% @current_users.each do |user| %>
+<a href="<%= user.name %>"><%= user.name %></a>／
+<% end %>
+</div>
+<h3>
+  いまどうしてる？
+</h3>
+<div id="tweet">
+  <form method="post" action="/tweet">
+    <textarea name="body" rows="5" cols="28"></textarea>
+    <input type="submit" value="投稿する" />
+  </form>
+</div>
+<% if @user.timeline.present? %>
+<div id="timeline">
+  <table>
+    <% @user.timeline.each do |user, tweet| %>
+    <tr>
+      <td>
+	<a href="<%= user.name %>"><%= user.name %></a>
+      </td>
+      <td>
+	<%= tweet.body %>
+      </td>
+      <td>
+	<%= tweet.created_at %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<% end %>
+<% end %>

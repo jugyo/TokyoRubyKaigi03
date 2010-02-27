@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" /> 
+  <title>東京RubyKaigiワークショップ</title>
+</head>
+<body>
+<h1>東京RubyKaigiワークショップなう</h1>
+<% if login? %>
+<div id="logout">
+  <a href="/">ホーム</a>／<a href="/<%= @user.name %>">プロフィール</a>／<a href="/logout">ログアウト</a>
+</div>
+<% end %>
+<%= yield %>
+</body>
+</html>

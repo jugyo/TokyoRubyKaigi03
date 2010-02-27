@@ -1,13 +1,13 @@
 =東京RubyKaigi03 ワークショップ
 
 ==概要
-Sinatra + herokuで簡単なtwitterクローンを作ってみる:
+Sinatra + herokuで簡単なtwitterクローンを作ってみる
 
 ==講師
 1. tsuyoshikawa
-これらのドキュメントとコードの作成と、当日の進行役をやります:
+これらのドキュメントとコードの作成と、当日の進行役をやります
 2. jugyo
-受講者のバックアップです。主に当日のコードの見守り役をやります:
+受講者のバックアップです。主に当日のコードの見守り役をやります
 
 ==環境
 * ruby 1.8.7 (2010-01-10 patchlevel 249)
@@ -20,7 +20,7 @@ Sinatra + herokuで簡単なtwitterクローンを作ってみる:
 * do_sqlite3 (0.10.1.1)
 * unicorn (0.96.1)
 
-下記のコマンドで一発で準備出来るでしょう:
+下記のコマンドで一発で準備出来るでしょう
  sudo gem install sinatra dm-core dm-timestamps do_sqlite3 unicorn --no-rdoc --no-ri
 
 ==参考URL
@@ -34,12 +34,14 @@ http://datamapper.org/docs
 http://docs.heroku.com
 
 ==伝えたいこと
-Sinatraで小物の開発はすごい楽:
-herokuがあるので商用ではテスト環境に、プライベートならそのまま開発して公開まで出来てしまう:
+
+Sinatraで小物の開発はすごい楽だし、生産的。
+herokuがあるので商用ではテスト環境に、プライベートならそのまま公開まで出来てしまう
 
 ==ハマりポイント
 * dm-*とdo_*はそれぞれバージョンをそろえること
 * herokuにあるdm-coreとdo_*のバージョンは、0.9.11
-なので、DataMapperの関連周りが全然動かない。:
-herokuのENV['DATABASE_URL']にはheroku内のデータベース(postgres)のURL情報が設定されてあり、:
-do_*系のバージョンアップも不可能なため、DataMapperのアップグレードをherokuがしてくれる日を待つほか無い:
+
+なので、DataMapper最新(今だと0.10.2)の関連周りが全然動かない。
+herokuのENV['DATABASE_URL']にはheroku内のデータベース(postgres)が設定されてあり、
+拡張であるdo_*系のバージョンアップは不可能なため、DataMapperのアップグレードをherokuがサポートしてくれる日を待つほか無い。

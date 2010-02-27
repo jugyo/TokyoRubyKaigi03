@@ -1,6 +1,5 @@
 =東京RubyKaigi03 ワークショップ
-
----
+================
 
 ==概要
 Sinatra + herokuで簡単なtwitterクローンを作ってみる

@@ -9,9 +9,11 @@ Sinatra + herokuで簡単なtwitterクローンを作ってみる
 2. jugyo
 受講者のバックアップです。主に当日のコードの見守り役をやります
 
-==環境
+==必要な環境
 * ruby 1.8.7 (2010-01-10 patchlevel 249)
 * gem 1.3.6
+* sqlite3
+* （必須ではないが）git
 
 ==必要なライブラリ
 * sinatra (0.9.4)
@@ -33,8 +35,20 @@ http://datamapper.org/docs
 * Heroku Docs&FAQs
 http://docs.heroku.com
 
-==伝えたいこと
+==サンプルアプリケーション
+* sample1
+Sinatraでおなじみのハローワールドを。
+* sample2
+Twitterもどき。
 
+==動かし方
+環境が揃っていること前提で
+ git clone git@github.com:jugyo/TokyoRubyKaigi03.git
+ cd TokyoRubyKaigi03
+ ruby migration.rb
+ unicorn
+
+==伝えたいこと
 Sinatraで小物の開発はすごい楽だし、生産的。
 herokuがあるので商用ではテスト環境に、プライベートならそのまま公開まで出来てしまう
 

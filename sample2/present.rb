@@ -1,4 +1,4 @@
-[Object, Numeric, NilClass, TrueClass, FalseClass, String].each do |klass|
+%w[Object Numeric NilClass TrueClass FalseClass String].each do |klass|
   klass.class_eval do
     def present?
       not blank?

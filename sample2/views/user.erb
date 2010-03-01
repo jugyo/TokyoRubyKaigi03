@@ -1,12 +1,12 @@
 <p>
-  <%= @someone.name %>さんの最近のつぶやきです
+  <%= h @someone.name %>さんの最近のつぶやきです
 </p>
 <% if login? && @someone.name != @user.name %>
 <div id="follow">
   <% unless @followed %>
-  <a href="/<%= @someone.name %>/follow">フォローする</a>／
+  <a href="/<%= h @someone.name %>/follow">フォローする</a>／
   <% else %>
-  <a href="/<%= @someone.name %>/remove">リムーブする</a>
+  <a href="/<%= h @someone.name %>/remove">リムーブする</a>
   <% end %>
 </div>
 <% end %>
@@ -16,7 +16,7 @@
     <% @someone.tweets.each do |tweet| %>
     <tr>
       <td>
-	<%= tweet.body %>
+	<%= h tweet.body %>
       </td>
       <td>
 	<%= tweet.created_at %>

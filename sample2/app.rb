@@ -10,6 +10,9 @@ configure do
 end
 
 helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+
   def user_authentication
     return if session[:ssid].nil?
     @user = User.first(:session => {:id => session[:ssid], :expired_at.gte => Time.now})

@@ -5,7 +5,7 @@
 </p>
 <% else %>
 <h2>
-  こんにちわ！<%= @user.name %>さん
+  こんにちわ！<%= h @user.name %>さん
 </h2>
 <div id="follow">
   フォローしている(<%= @user.followings.count %>)／フォローされている(<%= @user.followers.count %>)
@@ -15,7 +15,7 @@
 </p>
 <div id="current_user">
 <% @current_users.each do |user| %>
-<a href="<%= user.name %>"><%= user.name %></a>／
+<a href="<%= h user.name %>"><%= h user.name %></a>／
 <% end %>
 </div>
 <h3>
@@ -33,10 +33,10 @@
     <% @user.timeline.each do |user, tweet| %>
     <tr>
       <td>
-	<a href="<%= user.name %>"><%= user.name %></a>
+	<a href="<%= h user.name %>"><%= h user.name %></a>
       </td>
       <td>
-	<%= tweet.body %>
+	<%= h tweet.body %>
       </td>
       <td>
 	<%= tweet.created_at %>

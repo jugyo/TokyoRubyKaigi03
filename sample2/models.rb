@@ -22,7 +22,7 @@ class User
   def self.password_crypt(plain_text)
     Digest::SHA1.hexdigest(PASSWORD_SALT + plain_text)
   end
-
+  
   def password=(plain_text)
     attribute_set(:password, User.password_crypt(plain_text))
   end
